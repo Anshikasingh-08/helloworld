@@ -1,0 +1,15 @@
+import tkinter
+import tkinter.font
+root=tkinter.Tk()
+lbl_root=tkinter.Label(bg='pink')
+lbl_root.pack()
+lbl_login=tkinter.Label(lbl_root, text="Login", padx=100, pady=10)
+lbl_login.pack(side='top')
+lbl_user=tkinter.Label(lbl_root, text="Username")
+lbl_user.pack(side='left')
+lbl_pass=tkinter.Label(lbl_root, text="Password")
+lbl_pass.pack(side='bottom')
+str_user=tkinter.StringVar()
+txt_user=tkinter.Entry(lbl_root)
+txt_user.pack()
+root.mainloop()
