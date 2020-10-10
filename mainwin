@@ -1,0 +1,52 @@
+#dark blue: ecf0f1
+#light blue: a2d9ce
+
+
+from tkinter import messagebox
+from tkinter import simpledialog
+import tkinter
+from tkinter import font
+from PIL import ImageTk, Image
+
+#main window a2d9ce
+root = tkinter.Tk()
+# root.state('z')
+root.minsize(900,500)
+root.maxsize(900,500)
+lbl_root = tkinter.Label(root, bg='white')
+lbl_root.grid(row=0, column=0, ipadx=280)
+
+#about window
+lbl_win=tkinter.Label(root, bg='#a2d9ce')
+lbl_win.grid(row=1,column=0, pady=0, padx=0, columnspan=3, ipadx=280)
+
+#image on main window
+img_load = Image.open("BIET_Jhansi_Logo.jpg")
+img_bg = ImageTk.PhotoImage(img_load, height=2000, width=2000)
+img_bg.img = img_bg
+lbl_master = tkinter.Label(master=lbl_root, image=img_bg, bg='white')
+lbl_master.grid(row=0, column=0)
+
+#heading label
+font_head = font.Font(family="Comic Sans MS",size=20,weight="bold", slant='italic')
+lbl_one = tkinter.Label(master=lbl_root, text="BIET JHANSI TRAINING AND PLACEMENT CELL", background='#a2d9ce', height=4, font=font_head)
+lbl_one.grid(row=0, column=1, columnspan=3, ipadx=10, ipady=10, padx=10, pady=20)
+
+#login buttons
+btn_login = tkinter.Button(master=lbl_win, text='LOGIN', background='#D0ECE7')
+btn_login.grid(row=1, column=0, ipadx=100, ipady=10, padx=10, pady=20)
+btn_signup = tkinter.Button(master=lbl_win, text='SIGN UP', background='#D0ECE7')
+btn_signup.grid(row=1, column=1, ipadx=100, ipady=10, padx=10, pady=20)
+
+#contact us
+btn_call = tkinter.Button(lbl_win, text='Helpline Number-For General Queries\n0512-908-123-99', background='#D0ECE7')
+btn_call.grid(row=1, column=2, ipadx=50, ipady=10, padx=10, pady=20)
+
+lbl_abth=tkinter.Label(root)
+lbl_abth.grid(row=2,column=0, padx=0)
+
+#about
+head_abt=tkinter.Label(lbl_abth, text='ABOUT', font=font.Font(family='Impact', weight='bold', size=20))
+head_abt.grid(row=2, column=1, ipadx=100, ipady=30, padx=100)
+
+root.mainloop()
